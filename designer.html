@@ -1,4 +1,4 @@
-<link rel="import" href="../core-input/core-input.html">
+<link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-button/paper-button.html">
 
 <polymer-element name="my-element">
@@ -22,18 +22,26 @@
         border-bottom-left-radius: 2px;
         box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
         left: 280px;
-        top: 180px;
+        top: 120px;
         background-color: rgb(255, 255, 255);
       }
-      #core_input {
-        padding: 15px;
-      }
       #paper_button {
+        padding: 5px;
+        margin: 10px;
         background-color: rgb(148, 33, 146);
       }
+      #paper_input {
+        padding: 15px;
+        margin: 10px;
+      }
+      #paper_input1 {
+        padding: 15px;
+        margin: 10px;
+      }
     </style>
-    <core-card id="core_card" layout vertical>
-      <core-input willvalidate placeholder="Type something..." autofocus id="core_input"></core-input>
+    <core-card id="core_card" vertical layout center center-justified>
+      <paper-input label="Email" willvalidate id="paper_input" layout vertical></paper-input>
+      <paper-input label="Password" willvalidate id="paper_input1" layout vertical></paper-input>
       <paper-button label="Paper Button" id="paper_button"></paper-button>
     </core-card>
   </template>
