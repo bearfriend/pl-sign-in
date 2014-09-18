@@ -1,6 +1,3 @@
-<link href="../core-icon-button/core-icon-button.html" rel="import">
-<link href="../core-toolbar/core-toolbar.html" rel="import">
-<link href="../core-header-panel/core-header-panel.html" rel="import">
 <link href="../core-input/core-input.html" rel="import">
 
 <polymer-element name="my-element">
@@ -8,52 +5,29 @@
   <template>
     <style>    
       #design_host {
-        position: absolute;
-        width: 100%;
-        height: 100%;
         box-sizing: border-box;
-      }
-      #core_card {
-        width: 300px;
-        height: 300px;
-        background-color: rgb(255, 255, 255);
-        border-radius: 2px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.098), 0px 0px 3px rgba(0, 0, 0, 0.098);
       }
       #core_icon {
         left: 1130px;
         top: 500px;
       }
+      #core_card {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 2px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.098), 0px 0px 3px rgba(0, 0, 0, 0.098);
+        left: 280px;
+        top: 180px;
+      }
       #core_input {
         padding: 15px;
       }
-      #core_header_panel {
-        width: 1090px;
-        height: 460px;
-        left: 0px;
-        top: 0px;
-        position: absolute;
-      }
-      #core_toolbar {
-        background-color: rgb(79, 125, 201);
-        color: rgb(255, 255, 255);
-        width: 100%;
-      }
-      #section {
-        background: linear-gradient(rgb(214, 227, 231), lightblue) repeat scroll 0% 0% transparent;
-      }
     </style>
-    <core-header-panel mode="standard" id="core_header_panel">
-      <core-toolbar id="core_toolbar">
-        <core-icon-button icon="menu" id="core_icon_button"></core-icon-button>
-        <div id="div">Header</div>
-      </core-toolbar>
-      <section id="section" center center-justified vertical layout>
-        <core-card id="core_card" vertical layout start-justified center>
-          <core-input willvalidate placeholder="Type something..." id="core_input"></core-input>
-        </core-card>
-      </section>
-    </core-header-panel>
+    <core-card id="core_card" vertical layout>
+      <core-input willvalidate placeholder="Type something..." autofocus id="core_input"></core-input>
+    </core-card>
   </template>
 
   <script>
