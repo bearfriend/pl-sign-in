@@ -1,10 +1,11 @@
-<link href="../core-input/core-input.html" rel="import">
+<link rel="import" href="../core-input/core-input.html">
+<link rel="import" href="../paper-button/paper-button.html">
 
 <polymer-element name="my-element">
 
   <template>
     <style>    
-      #design_host {
+      :host {
         box-sizing: border-box;
       }
       #core_icon {
@@ -15,18 +16,25 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background-color: rgb(255, 255, 255);
-        border-radius: 2px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.098), 0px 0px 3px rgba(0, 0, 0, 0.098);
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
         left: 280px;
         top: 180px;
+        background-color: rgb(255, 255, 255);
       }
       #core_input {
         padding: 15px;
       }
+      #paper_button {
+        background-color: rgb(148, 33, 146);
+      }
     </style>
     <core-card id="core_card" layout vertical>
       <core-input willvalidate placeholder="Type something..." autofocus id="core_input"></core-input>
+      <paper-button label="Paper Button" id="paper_button"></paper-button>
     </core-card>
   </template>
 
