@@ -10,42 +10,39 @@
   <template>
     <style>    
       :host {
-	    width: 400px;
+	    width: 450px;
 	    position: relative;
       }
       #core-card {
         border-radius: 2px;
         background-color: rgb(255, 255, 255,.75);
-	    padding: 2em;
+	    padding: 2.25em 3.5em;
    	    box-sizing: border-box;
       }
-      #sign-in-button {
-        padding: 5px;
-        margin: 10px;
+      #email-input, #passw-input {
+	    width: 100%;
+      }
+	  #sign-in-button {
         color: rgb(255, 255, 255);
-        width: 70%;
-        top: 10px;
-        background-color: rgb(148, 33, 146);
-
+        background-color: #7A2E4A;
    	    padding: .5em 1em;
-	    box-sizing: border-box;
-      }
-      #email-input {
-	    width: 100%;
-      }
-      #passw-input {
-	    width: 100%;
+	    margin: 0px;
+	    margin: .75em 0px;
       }
       #ssi-checkbox {
-	  margin: 5px;
+	  margin: .75em 0px;
       }
     </style>
     <core-card id="core-card" vertical layout fit>
 	  <paper-shadow z="2"></paper-shadow>
       <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
-      <paper-input label="Password" willvalidate id="passw-input" layout vertical></paper-input>
+      <paper-input type="password" label="Password" willvalidate id="passw-input" layout vertical></paper-input>
       <paper-button label="Sign in" id="sign-in-button"></paper-button>
-      <paper-checkbox label="remember me" id="ssi-checkbox" start></paper-checkbox>
+	  <span layout horizontal>
+		<paper-checkbox label="remember me" id="ssi-checkbox" start></paper-checkbox>
+		<div flex></div>
+		<a href="#forgot-password">Forgot your password?</a>
+	  </span>
     </core-card>
   </template>
 
