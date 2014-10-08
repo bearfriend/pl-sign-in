@@ -1,0 +1,18 @@
+{
+  "name": "sign-in-form",
+  "version": "0.0.0",
+  "authors": [
+    "Danny Gleckler <daniel.gleckler@desire2learn.com>"
+  ],
+  "description": "A Polymer component used for Binder/Brightspace sign-in.",
+  "main": "designer.html",
+  "license": "n/a",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
