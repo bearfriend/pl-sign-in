@@ -15,7 +15,7 @@
       }
       #core-card {
         border-radius: 2px;
-        background-color: rgba(255, 255, 255,.75);
+        background-color: rgba(255, 255, 255,.55);
 	    padding: 2.25em 3.5em;
    	    box-sizing: border-box;
 	    width: 100%;
@@ -24,13 +24,12 @@
 	    width: 100%;
       }
 	  #sign-in-button {
-        color: rgb(255, 255, 255);
+        color: rgba(255, 255, 255,.8);
         background-color: #7A2E4A;
    	    padding: .5em 1em;
 	    margin: 0px;
-	    margin: .75em 0px;
       }
-      #ssi-checkbox {
+      .form-row {
 	  margin: .75em 0px;
       }
     </style>
@@ -38,11 +37,11 @@
 	  <paper-shadow z="2"></paper-shadow>
       <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
       <paper-input type="password" label="Password" willvalidate id="passw-input" layout vertical></paper-input>
-      <paper-button label="Sign in" id="sign-in-button"></paper-button>
-	  <span layout horizontal>
+      <paper-button label="Sign in" id="sign-in-button" class="form-row"></paper-button>
+	  <span class="form-row" layout horizontal>
 		<paper-checkbox label="remember me" id="ssi-checkbox" start></paper-checkbox>
 		<div flex></div>
-		<a href="#forgot-password">Forgot your password?</a>
+		<a href="/#forgot-password">Forgot password?</a>
 	  </span>
     </core-card>
   </template>
