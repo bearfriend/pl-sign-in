@@ -8,7 +8,8 @@
 <polymer-element name="sign-in-form">
 
   <template>
-    <style>    
+	<core-style ref="globalTheme"></core-style>
+    <style>
       :host {
 	    width: 450px;
 	    position: relative;
@@ -30,9 +31,10 @@
 	    margin: 0px;
       }
       .form-row {
-	  margin: .75em 0px;
+	    margin: .75em 0px;
       }
     </style>
+	<core-style ref="signInForm"></core-style>
     <core-card id="core-card" vertical layout>
 	  <paper-shadow z="2"></paper-shadow>
       <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
