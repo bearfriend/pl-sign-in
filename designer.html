@@ -5,13 +5,14 @@
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
 
-<polymer-element name="sign-in-form">
+<polymer-element name="sign-in-form" noscript>
 
   <template>
 	<core-style ref="globalTheme"></core-style>
     <style>
       :host {
 	    width: 450px;
+	    max-width: 100%;
 	    position: relative;
       }
       #core-card {
@@ -24,20 +25,11 @@
       <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
       <paper-input type="password" label="Password" willvalidate id="passw-input" layout vertical></paper-input>
       <paper-button label="Sign in" id="sign-in-button" class="form-row"></paper-button>
-	  <span class="form-row" layout horizontal>
-		<paper-checkbox label="remember me" id="ssi-checkbox" start></paper-checkbox>
-		<div flex></div>
-		<a href="/#forgot-password">Forgot password?</a>
+	  <span layout horizontal justified wrap>
+		<paper-checkbox class="form-row" label="remember me" id="ssi-checkbox" start></paper-checkbox>
+		<paper-button on-click="console.log('on-click');" on-tap="console.log('on-tap');" on-down="console.log('on-down');" class="small-text form-row">Forgot password?</paper-button>
 	  </span>
     </core-card>
   </template>
-
-  <script>
-
-    Polymer('sign-in-form', {
-      
-    });
-
-  </script>
 
 </polymer-element>
