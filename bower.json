@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
+    "polymer": "Polymer/polymer#^0.4.2",
     "paper-input": "Polymer/paper-input#~0.4.2",
     "core-icons": "Polymer/core-icons#~0.4.2",
     "paper-button": "Polymer/paper-button#~0.4.2",
