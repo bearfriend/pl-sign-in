@@ -1,26 +1,35 @@
-<link rel="import" href="../core-icons/core-icons.html">
-<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
 
-<polymer-element name="sign-in-form" noscript>
+<!--
+A Polymer component used for Binder/Brightspace sign-in.
+
+##### Example
+
+    <sign-in-form></sign-in-form>
+
+@element sign-in-form
+@blurb A Polymer component used for Binder/Brightspace sign-in.
+@status alpha
+@homepage http://polymerlabs.github.io/sign-in-form
+-->
+<polymer-element name="sign-in-form" attributes="">
 
   <template>
-    <style>
-	  #ssi-checkbox {
-	    margin-right: 1em;
-	  }
-    </style>
+
+    <link rel="stylesheet" href="sign-in-form.css" />
+
 	<core-style ref="signInForm"></core-style>
-    <core-card class="sso-card" id="core-card" vertical layout>
+	<core-card class="sso-card" id="core-card" vertical layout>
 	  <paper-shadow z="2"></paper-shadow>
 	  <paper-button class="fb form-row">Sign in with Facebook</paper-button>
 	  <div class="form-row" center-text><strong>OR</strong></div>
-      <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
-      <paper-input type="password" label="Password" willvalidate id="passw-input" layout vertical></paper-input>
-      <paper-button label="Sign in" id="sign-in-button" class="form-row"></paper-button>
+	  <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
+	  <paper-input type="password" label="Password" willvalidate id="passw-input" layout vertical></paper-input>
+	  <paper-button label="Sign in" id="sign-in-button" class="form-row"></paper-button>
 	  <span layout horizontal justified wrap>
 		<paper-checkbox class="form-row" label="remember me" id="ssi-checkbox" start></paper-checkbox>
 		<a href="/#forgot-pw" class="small-text form-row" self-center>Forgot password?</a>
@@ -29,7 +38,29 @@
 	  <a href="/#sign-up" id="sign-up" class="form-row" center-text>
 		Create an account
 	  </a>
-    </core-card>
+	</core-card>
+
   </template>
+
+  <script>
+
+    Polymer({
+      /**
+       * The `author` attribute sets an initial author
+       *
+       * @attribute author
+       * @type string
+       * @default 'Daniel Gleckler'
+       */
+      author: 'Daniel Gleckler',
+
+      ready: function() {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+      }
+    });
+
+  </script>
 
 </polymer-element>

@@ -1,27 +1,24 @@
 {
   "name": "sign-in-form",
   "version": "0.0.0",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
   "authors": [
-    "Danny Gleckler <daniel.gleckler@desire2learn.com>"
+	"Danny Gleckler <daniel.gleckler@d2l.com>"
   ],
+  "main": "sign-in-form.html",
   "description": "A Polymer component used for Binder/Brightspace sign-in.",
-  "main": "designer.html",
-  "license": "n/a",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
-    "paper-input": "Polymer/paper-input#~0.4.2",
-    "core-icons": "Polymer/core-icons#~0.4.2",
-    "paper-button": "Polymer/paper-button#~0.4.2",
+	"paper-input": "Polymer/paper-input#~0.4.2",
+	"paper-button": "Polymer/paper-button#~0.4.2",
     "paper-checkbox": "Polymer/paper-checkbox#~0.4.2",
-    "paper-icon-button": "Polymer/paper-icon-button#~0.4.2",
-    "paper-shadow": "Polymer/paper-shadow#~0.4.2"
+	"paper-shadow": "Polymer/paper-shadow#~0.4.2"
+  },
+  "devDependencies": {
+    "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.0"
   }
 }
