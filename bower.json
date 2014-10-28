@@ -1,5 +1,5 @@
 {
-  "name": "sign-in-form",
+  "name": "pl-sign-in",
   "version": "0.0.0",
   "keywords": [
     "seed",
@@ -10,7 +10,7 @@
 	"Danny Gleckler <daniel.gleckler@d2l.com>"
   ],
   "description": "A Polymer component used for Binder/Brightspace sign-in.",
-  "main": "sign-in-form.html",
+  "main": "pl-sign-in.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
   	"pl-input": "https://github.com/bearfriend/pl-input.git",
