@@ -1,8 +1,9 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../pl-input/pl-input.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../core-style/core-style.html">
 
 <!--
 A Polymer component used for Binder/Brightspace sign-in.
@@ -27,8 +28,8 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <paper-shadow z="2"></paper-shadow>
 	  <paper-button class="fb form-row">Sign in with Facebook</paper-button>
 	  <div class="form-row" center-text><strong>OR</strong></div>
-	  <paper-input label="Email" willvalidate id="email-input" layout vertical></paper-input>
-	  <paper-input type="password" label="Password" willvalidate id="passw-input" layout vertical></paper-input>
+	  <pl-input label="Email" id="email-input" layout vertical></pl-input>
+	  <pl-input type="password" label="Password" id="passw-input" layout vertical></pl-input>
 	  <paper-button label="Sign in" id="sign-in-button" class="form-row"></paper-button>
 	  <span layout horizontal justified wrap>
 		<paper-checkbox class="form-row" label="remember me" id="ssi-checkbox" start></paper-checkbox>
