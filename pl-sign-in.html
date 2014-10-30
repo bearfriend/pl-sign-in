@@ -28,9 +28,9 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <paper-shadow z="2"></paper-shadow>
 	  <paper-button class="fb form-row">Sign in with Facebook</paper-button>
 	  <div class="form-row" center-text><strong>OR</strong></div>
-	  <pl-input label="Email" id="email-input" layout vertical></pl-input>
-	  <pl-input type="password" label="Password" id="passw-input" layout vertical></pl-input>
-	  <paper-button label="Sign in" id="sign-in-button" class="form-row"></paper-button>
+	  <pl-input label="Email" id="email-input" required="An email address is required to sign in" error="Whoa buddy, this doesn't look like an email address." validation=false type="email" layout vertical></pl-input>
+	  <pl-input type="password" label="Password" id="passw-input" required="A password is required to sign in" validation=false layout vertical></pl-input>
+	  <paper-button label="Sign in" id="sign-in-button" class="form-row" on-click="{{ signIn }}"></paper-button>
 	  <span layout horizontal justified wrap>
 		<paper-checkbox class="form-row" label="remember me" id="ssi-checkbox" start></paper-checkbox>
 		<a href="/#forgot-pw" class="small-text form-row" self-center>Forgot password?</a>
@@ -59,7 +59,15 @@ A Polymer component used for Binder/Brightspace sign-in.
         // Ready is a lifecycle callback.
         // You can do setup work in here.
         // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
-      }
+      },
+
+	  signIn: function() {
+		this.querySelectorAll('pl-input[validate=false]').each(
+		  function(e) {
+			e.validate();
+		  };
+		);
+	  }
     });
 
   </script>
