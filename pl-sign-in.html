@@ -40,7 +40,7 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <div class="form-row" center-text><strong>OR</strong></div>
 
 	  <pl-input autofocus value="{{ params.email }}" label="Email" id="email" required="An email address is required to sign in" error="Whoa buddy, this doesn't look like an email address." validation=false type="email" layout vertical></pl-input>
-	  <pl-input value="{{ params.password }}" type="password" label="Password" id="password" required="A password is required to sign in" validation=false layout vertical></pl-input>
+	  <pl-input value="{{ params.password }}" type="password" pattern=".{8,}" label="Password" id="password" required="A password is required to sign in" validation=false layout vertical></pl-input>
 
 	  <paper-button id="sign-in-button" class="form-row" on-click="{{ signIn }}">Sign In</paper-button>
 	  <core-a11y-keys target="{{ $['sign-in-button'] }}" keys="enter space" on-keys-pressed="{{ signIn }}"></core-a11y-keys>
