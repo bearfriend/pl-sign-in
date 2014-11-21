@@ -80,14 +80,15 @@ A Polymer component used for Binder/Brightspace sign-in.
       },
 
 	  signIn: function() {
-		this.querySelectorAll('pl-input[validate=false]').each(
+		this.shadowRoot.querySelectorAll('pl-input[validation=false]').array().forEach(
 		  function(e) {
-			e.validate();
+			e.validation = true;
+			e.startValidation();
 		  }
 		);
 
-		if (!this.querySelectorAll('pl-input.invalid').length) {
-		  this.$.ajax.go();		  
+		if (!this.shadowRoot.querySelectorAll('pl-input.invalid').length) {
+		  this.$.ajax.go();	  
 		}
 	  },
 
