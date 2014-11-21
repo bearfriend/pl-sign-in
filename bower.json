@@ -7,19 +7,22 @@
     "web-components"
   ],
   "authors": [
-	"Danny Gleckler <daniel.gleckler@d2l.com>"
+    "Danny Gleckler <daniel.gleckler@d2l.com>"
   ],
   "description": "A Polymer component used for Binder/Brightspace sign-in.",
   "main": "pl-sign-in.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.1",
-  	"pl-input": "https://github.com/bearfriend/pl-input.git",
-	"paper-button": "Polymer/paper-button#~0.5.1",
+    "pl-input": "https://github.com/bearfriend/pl-input.git",
+    "paper-button": "Polymer/paper-button#~0.5.1",
     "paper-checkbox": "Polymer/paper-checkbox#~0.5.1",
-	"paper-shadow": "Polymer/paper-shadow#~0.5.1"
+    "paper-shadow": "Polymer/paper-shadow#~0.5.1",
+    "core-ajax": "Polymer/core-ajax#~0.5.1",
+    "core-a11y-keys": "Polymer/core-a11y-keys#~0.5.1",
+    "core-style": "Polymer/core-style#~0.5.1"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/polymer-test-tools#^0.5.1",
-	"pl-config": "https://github.com/bearfriend/pl-config.git"
+    "pl-config": "https://github.com/bearfriend/pl-config.git"
   }
 }
