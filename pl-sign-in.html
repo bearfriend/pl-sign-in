@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../pl-input/pl-input.html">
+<link rel="import" href="../pl-input-decorator/pl-input-decorator.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
@@ -39,8 +39,12 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <paper-button class="fb form-row">Sign in with Facebook</paper-button>
 	  <div class="form-row" center-text><strong>OR</strong></div>
 
-	  <pl-input autofocus value="{{ params.email }}" label="Email" id="email" required="An email address is required to sign in" error="Whoa buddy, this doesn't look like an email address." validation=false type="email" layout vertical></pl-input>
-	  <pl-input value="{{ params.password }}" type="password" label="Password" id="password" required="A password is required to sign in" validation=false layout vertical></pl-input>
+	  <pl-input-decorator autofocus value="{{ params.email }}" label="Email" required="An email address is required to sign in" error="Whoa buddy, this doesn't look like an email address." validation=false type="email">
+		<input id="email" />
+	  </pl-input-decorator>
+	  <pl-input-decorator value="{{ params.password }}" type="password" label="Password" required="A password is required to sign in" validation=false>
+		<input id="password" type="password" />
+	  </pl-input>
 
 	  <paper-button id="sign-in-button" class="form-row" on-click="{{ signIn }}">Sign In</paper-button>
 	  <core-a11y-keys target="{{ $['sign-in-button'] }}" keys="enter space" on-keys-pressed="{{ signIn }}"></core-a11y-keys>
@@ -80,14 +84,14 @@ A Polymer component used for Binder/Brightspace sign-in.
       },
 
 	  signIn: function() {
-		this.shadowRoot.querySelectorAll('pl-input[validation=false]').array().forEach(
+		this.shadowRoot.querySelectorAll('pl-input-decorator[validation=false]').array().forEach(
 		  function(e) {
 			e.validation = true;
 			e.startValidation();
 		  }
 		);
 
-		if (!this.shadowRoot.querySelectorAll('pl-input.invalid').length) {
+		if (!this.shadowRoot.querySelectorAll('pl-input-decorator.invalid').length) {
 		  this.$.ajax.go();	  
 		}
 	  },
