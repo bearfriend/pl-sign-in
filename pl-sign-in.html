@@ -51,7 +51,7 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <core-a11y-keys target="{{ $['sign-in-button'] }}" keys="enter space" on-keys-pressed="{{ signIn }}"></core-a11y-keys>
 	  
 	  <span layout horizontal justified wrap>
-		<paper-checkbox value="{{ params.ssi }}" class="form-row" label="Stay signed in" id="ssi-checkbox" start></paper-checkbox>
+		<paper-checkbox on-change="{{ toggleSSI }}" class="form-row" label="Stay signed in" id="ssi-checkbox" start></paper-checkbox>
 		<a href="/#forgot-pw" class="small-text form-row" self-center>Forgot password?</a>
 	  </span>
 	  <div class="spacer"></div>
@@ -76,8 +76,13 @@ A Polymer component used for Binder/Brightspace sign-in.
 
 	  publish: {
 		params: {
-		  token: 'a'
+		  token: 'a',
+		  ssi: false
 		}
+	  },
+
+	  toggleSSI: function(e,detail,el) {
+		this.params.ssi = +el.checked;
 	  },
 	  
       ready: function() {
