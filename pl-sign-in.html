@@ -39,11 +39,11 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <paper-button class="fb form-row">Sign in with Facebook</paper-button>
 	  <div class="form-row" center-text><strong>OR</strong></div>
 
-	  <pl-input-decorator autofocus value="{{ params.email }}" label="Email" required="An email address is required to sign in" error="Whoa buddy, this doesn't look like an email address." validation=false type="email">
-		<input id="email" />
+	  <pl-input-decorator autofocus label="Email" required="An email address is required to sign in" error="Whoa buddy, this doesn't look like an email address." validation=false type="email">
+		<input id="email" value="{{ params.email }}" />
 	  </pl-input-decorator>
-	  <pl-input-decorator value="{{ params.password }}" type="password" label="Password" required="A password is required to sign in" validation=false>
-		<input id="password" type="password" />
+	  <pl-input-decorator type="password" label="Password" required="A password is required to sign in" validation=false>
+		<input id="password" value="{{ params.password }}" type="password" />
 	  </pl-input-decorator>
 
 	  <paper-button id="sign-in-button" class="form-row" on-click="{{ signIn }}">Sign In</paper-button>
