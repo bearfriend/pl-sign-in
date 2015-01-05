@@ -30,7 +30,8 @@ A Polymer component used for Binder/Brightspace sign-in.
 			   url="http://54.84.119.67:1337/api/users/signin" // this must be replaced somehow
 			   params='{{ params }}'
 			   handleAs="json"
-			   on-core-response="{{ handleResponse }}"
+			   on-core-response="{{ signInSuccess }}"
+			   on-core-error="{{ signInFailure }}"
 			   withCredentials></core-ajax>
 	
 	<core-style ref="signInForm"></core-style>
@@ -50,7 +51,7 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  <core-a11y-keys target="{{ $['sign-in-button'] }}" keys="enter space" on-keys-pressed="{{ signIn }}"></core-a11y-keys>
 	  
 	  <span layout horizontal justified wrap>
-		<paper-checkbox value="{{ params.ssi }}" class="form-row" label="remember me" id="ssi-checkbox" start></paper-checkbox>
+		<paper-checkbox value="{{ params.ssi }}" class="form-row" label="Stay signed in" id="ssi-checkbox" start></paper-checkbox>
 		<a href="/#forgot-pw" class="small-text form-row" self-center>Forgot password?</a>
 	  </span>
 	  <div class="spacer"></div>
@@ -106,8 +107,12 @@ A Polymer component used for Binder/Brightspace sign-in.
 		this.fire('emailChanged',{email:this.$.email.value});
 	  },
 	  
-	  handleResponse: function() {
-		console.log(arguments);
+	  signInSuccess: function() {
+		window.location.href='http://54.84.119.67:1337/account';
+	  },
+
+	  signInFailure: function() {
+		return false;
 	  }
 	  
     });
