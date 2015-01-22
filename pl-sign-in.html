@@ -6,6 +6,7 @@
 <link rel="import" href="../core-style/core-style.html">
 <link rel="import" href="../core-ajax/core-ajax.html">
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="../pl-globals/pl-globals.html">
 
 <!--
 A Polymer component used for Binder/Brightspace sign-in.
@@ -23,11 +24,13 @@ A Polymer component used for Binder/Brightspace sign-in.
 
   <template>
 
+	<pl-globals id="globals"></pl-globals>
+	
     <link rel="stylesheet" href="pl-sign-in.css" />
 
 	<core-ajax id="ajax"
 			   method="POST"
-			   url="http://54.84.119.67:1337/api/users/signin" // this must be replaced somehow
+			   url="{{ $.globals.apiEndpoint }}/users/signin"
 			   params='{{ params }}'
 			   handleAs="json"
 			   on-core-response="{{ signInSuccess }}"
@@ -113,7 +116,7 @@ A Polymer component used for Binder/Brightspace sign-in.
 	  },
 	  
 	  signInSuccess: function() {
-		window.location.href='http://54.84.119.67:1337/account';
+		window.location.href = this.$.globals.apiEndpoint+'/account';
 	  },
 
 	  signInFailure: function() {
